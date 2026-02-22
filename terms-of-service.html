@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — DrawMe</title>
+  <meta name="description" content="DrawMe's Terms of Service. The rules and conditions governing your use of the DrawMe app and website." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.drawme.app/terms-of-service.html" />
+  <meta property="og:title"       content="Terms of Service — DrawMe" />
+  <meta property="og:description" content="The rules and conditions governing your use of the DrawMe NZ Lotto number generator app." />
+  <meta property="og:url"         content="https://www.drawme.app/terms-of-service.html" />
+  <meta property="og:site_name"   content="DrawMe" />
+  <meta name="theme-color" content="#7C3AED" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0b18;
+      --bg2:       #13101f;
+      --surface:   rgba(255,255,255,0.04);
+      --border:    rgba(255,255,255,0.08);
+      --purple:    #7C3AED;
+      --purple2:   #9D5CF6;
+      --pink:      #EC4899;
+      --orange:    #F97316;
+      --amber:     #FBBF24;
+      --text:      #f0ecff;
+      --muted:     rgba(240,236,255,0.5);
+      --radius:    16px;
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── NAV ─────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 0;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      background: rgba(13,11,24,0.7);
+    }
+
+    nav .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.3rem;
+      text-decoration: none;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-ball {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: white;
+      box-shadow: 0 0 16px rgba(124,58,237,0.5);
+    }
+
+    .nav-back {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--text); }
+
+    /* ─── PAGE HERO ───────────────────────────────── */
+    .page-hero {
+      padding-top: 140px;
+      padding-bottom: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blob-hero {
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      filter: blur(140px);
+      pointer-events: none;
+      background: rgba(236,72,153,0.12);
+      top: -150px; left: -100px;
+      animation: drift 14s ease-in-out infinite alternate;
+    }
+
+    @keyframes drift {
+      from { transform: translate(0,0) scale(1); }
+      to   { transform: translate(20px,-20px) scale(1.04); }
+    }
+
+    .page-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--purple2);
+      margin-bottom: 14px;
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--orange), var(--amber));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .page-meta {
+      color: var(--muted);
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ─── CONTENT ─────────────────────────────────── */
+    .doc-body { padding-bottom: 100px; }
+
+    .toc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 56px;
+    }
+
+    .toc-card h2 {
+      font-family: var(--font-head);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple2);
+      margin-bottom: 14px;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+
+    .toc-list a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+      padding: 2px 0;
+    }
+
+    .toc-list a:hover { color: var(--text); }
+
+    .toc-list a::before {
+      content: '';
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--purple2);
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    .doc-section {
+      margin-bottom: 56px;
+      scroll-margin-top: 100px;
+    }
+
+    .doc-section h2 {
+      font-family: var(--font-head);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .doc-section h2 .sec-num {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--orange), var(--amber));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #1a0a00;
+      flex-shrink: 0;
+    }
+
+    .doc-section h3 {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 24px 0 10px;
+      color: var(--text);
+    }
+
+    .doc-section p {
+      color: var(--muted);
+      font-size: 0.925rem;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .doc-section p:last-child { margin-bottom: 0; }
+
+    .doc-section ul, .doc-section ol {
+      padding-left: 0;
+      list-style: none;
+      margin: 12px 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .doc-section ul li, .doc-section ol li {
+      color: var(--muted);
+      font-size: 0.925rem;
+      line-height: 1.7;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .doc-section ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .doc-section ol {
+      counter-reset: ol-counter;
+    }
+
+    .doc-section ol li {
+      counter-increment: ol-counter;
+    }
+
+    .doc-section ol li::before {
+      content: counter(ol-counter) '.';
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .doc-section a {
+      color: var(--purple2);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .doc-section a:hover { color: var(--pink); }
+
+    .highlight-box {
+      background: rgba(249,115,22,0.07);
+      border: 1px solid rgba(249,115,22,0.2);
+      border-left: 3px solid var(--orange);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      color: rgba(240,236,255,0.75) !important;
+      font-size: 0.875rem !important;
+      margin: 0 !important;
+    }
+
+    .warning-box {
+      background: rgba(236,72,153,0.07);
+      border: 1px solid rgba(236,72,153,0.2);
+      border-left: 3px solid var(--pink);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+
+    .warning-box p {
+      color: rgba(240,236,255,0.75) !important;
+      font-size: 0.875rem !important;
+      margin: 0 !important;
+    }
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-top: 20px;
+    }
+
+    .contact-card p { margin-bottom: 8px !important; }
+
+    .contact-card a {
+      color: var(--purple2);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-card a:hover { color: var(--pink); }
+
+    /* ─── FOOTER ──────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+    }
+
+    footer .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-copy { color: var(--muted); font-size: 0.8rem; }
+
+    @media (max-width: 640px) {
+      .toc-list { grid-template-columns: 1fr; }
+      footer .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+      .page-meta { flex-direction: column; align-items: flex-start; gap: 6px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ NAV ════════════════════════════════════════ -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-ball">D</div>
+        DrawMe
+      </a>
+      <a href="index.html" class="nav-back">
+        ← Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <!-- ═══ PAGE HERO ══════════════════════════════════ -->
+  <div class="page-hero">
+    <div class="blob-hero"></div>
+    <div class="container">
+      <span class="page-tag">Legal</span>
+      <h1>Terms of <span class="gradient-text">Service</span></h1>
+      <div class="page-meta">
+        <span>📅 Last updated: 22 February 2026</span>
+        <span>📍 Jurisdiction: New Zealand</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DOCUMENT BODY ══════════════════════════════ -->
+  <div class="doc-body">
+    <div class="container">
+
+      <div class="highlight-box">
+        <p>Please read these Terms of Service carefully before using DrawMe. By downloading, installing, or using our application or website, you agree to be bound by these terms. If you do not agree to these terms, do not use DrawMe.</p>
+      </div>
+
+      <!-- Table of Contents -->
+      <div class="toc-card">
+        <h2>Contents</h2>
+        <ul class="toc-list">
+          <li><a href="#t1">1. Acceptance of Terms</a></li>
+          <li><a href="#t2">2. Description of Service</a></li>
+          <li><a href="#t3">3. Important Disclaimer</a></li>
+          <li><a href="#t4">4. Eligibility</a></li>
+          <li><a href="#t5">5. User Accounts</a></li>
+          <li><a href="#t6">6. Subscriptions & Billing</a></li>
+          <li><a href="#t7">7. Early Access Offer</a></li>
+          <li><a href="#t8">8. Acceptable Use</a></li>
+          <li><a href="#t9">9. Intellectual Property</a></li>
+          <li><a href="#t10">10. Disclaimer of Warranties</a></li>
+          <li><a href="#t11">11. Limitation of Liability</a></li>
+          <li><a href="#t12">12. Termination</a></li>
+          <li><a href="#t13">13. Governing Law</a></li>
+          <li><a href="#t14">14. Changes to Terms</a></li>
+          <li><a href="#t15">15. Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- 1 -->
+      <div class="doc-section" id="t1">
+        <h2><span class="sec-num">1</span> Acceptance of Terms</h2>
+        <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("User", "you", or "your") and DrawMe ("we", "us", or "our") governing your access to and use of the DrawMe mobile application, website, and related services (collectively, the "Service").</p>
+        <p>By creating an account, joining the waitlist, or using any part of the Service, you confirm that you have read, understood, and agree to be bound by these Terms, as well as our <a href="privacy-policy.html">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="doc-section" id="t2">
+        <h2><span class="sec-num">2</span> Description of Service</h2>
+        <p>DrawMe is a mobile application that analyses historical New Zealand Lotto and Powerball draw data to generate number combinations using statistical methods including frequency analysis, hot/cold number trends, pattern recognition, and ensemble modelling.</p>
+        <p>The Service includes:</p>
+        <ul>
+          <li>Statistical number generation using multiple prediction strategies</li>
+          <li>Historical NZ Lotto and Powerball draw results and analysis</li>
+          <li>Frequency statistics, hot/cold number tracking, and smart insights</li>
+          <li>Ability to save, rate, and track favourite number combinations</li>
+          <li>Starter (no cost) and Premium subscription tiers</li>
+        </ul>
+      </div>
+
+      <!-- 3 — DISCLAIMER — most important section -->
+      <div class="doc-section" id="t3">
+        <h2><span class="sec-num">3</span> Important Disclaimer</h2>
+
+        <div class="warning-box">
+          <p>⚠️ DrawMe is a statistical analysis and entertainment tool only. It does not predict, guarantee, or improve your chances of winning any lottery draw. All lottery draws are random events. Past draw patterns do not determine or influence future outcomes.</p>
+        </div>
+
+        <p>By using DrawMe, you explicitly acknowledge and agree that:</p>
+        <ul>
+          <li>DrawMe does not guarantee any lottery winnings whatsoever</li>
+          <li>The numbers generated by DrawMe have the same statistical probability of winning as any other randomly selected combination</li>
+          <li>Any "confidence scores" shown in the app are mathematical indicators of how a combination aligns with historical patterns — they are not predictors of future outcomes</li>
+          <li>Lottery gambling involves financial risk. You should only spend what you can comfortably afford to lose</li>
+          <li>DrawMe is not responsible for any financial losses incurred from acting on numbers generated by this app</li>
+        </ul>
+        <p>If you or someone you know has a gambling problem, please contact the New Zealand Problem Gambling Foundation at <a href="https://www.pgf.nz" target="_blank" rel="noopener noreferrer">www.pgf.nz</a> or call 0800 664 262.</p>
+      </div>
+
+      <!-- 4 -->
+      <div class="doc-section" id="t4">
+        <h2><span class="sec-num">4</span> Eligibility</h2>
+        <p>To use DrawMe, you must:</p>
+        <ul>
+          <li>Be at least 18 years of age, or the minimum legal age for lottery participation in your jurisdiction</li>
+          <li>Have the legal capacity to enter into a binding agreement</li>
+          <li>Not be prohibited from using the Service under any applicable law</li>
+        </ul>
+        <p>By using DrawMe, you represent and warrant that you meet all of the above eligibility requirements. DrawMe reserves the right to terminate accounts of users who do not meet these requirements.</p>
+      </div>
+
+      <!-- 5 -->
+      <div class="doc-section" id="t5">
+        <h2><span class="sec-num">5</span> User Accounts</h2>
+        <h3>Account Registration</h3>
+        <p>To access certain features of the Service, you must create an account. You agree to provide accurate, current, and complete information during registration and to keep your account information updated.</p>
+        <h3>Account Security</h3>
+        <p>You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You must notify us immediately at <a href="mailto:hello@drawme.app">hello@drawme.app</a> if you become aware of any unauthorised use of your account.</p>
+        <h3>One Account Per User</h3>
+        <p>You may only create one account per person. Creating multiple accounts to circumvent usage limits or to abuse early access offers is prohibited and may result in all accounts being terminated.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="doc-section" id="t6">
+        <h2><span class="sec-num">6</span> Subscriptions & Billing</h2>
+        <h3>Subscription Tiers</h3>
+        <p>DrawMe offers a Starter tier at no cost with limited features, and a Premium tier with full access. Premium is available on a monthly ($4.99 NZD/month) or annual ($39.99 NZD/year) basis.</p>
+        <h3>Billing & Renewals</h3>
+        <p>Premium subscriptions are billed in advance and automatically renew at the end of each billing period unless cancelled. Subscription management and payments are handled by RevenueCat and processed through Apple App Store or Google Play Store, subject to their respective terms.</p>
+        <h3>Cancellation</h3>
+        <p>You may cancel your Premium subscription at any time through your device's app store subscription settings. Cancellation takes effect at the end of the current billing period. We do not provide partial refunds for unused subscription time, except where required by New Zealand consumer law.</p>
+        <h3>Refunds</h3>
+        <p>Refund requests are subject to the refund policies of the Apple App Store and Google Play Store. We will work with you in good faith to resolve any billing issues. Contact us at <a href="mailto:hello@drawme.app">hello@drawme.app</a> if you have a billing concern.</p>
+        <h3>Price Changes</h3>
+        <p>We reserve the right to modify subscription pricing. We will provide at least 30 days' notice before any price change takes effect for existing subscribers.</p>
+      </div>
+
+      <!-- 7 -->
+      <div class="doc-section" id="t7">
+        <h2><span class="sec-num">7</span> Early Access Offer</h2>
+        <p>DrawMe offers the first 500 users who join the waitlist 60 days of Premium access on us upon the app's launch. The following conditions apply to this offer:</p>
+        <ul>
+          <li>The offer is limited to the first 500 verified waitlist registrations, determined by the order in which email addresses are recorded in our database</li>
+          <li>Each email address is eligible for this offer only once</li>
+          <li>The 60-day period begins on the date your account is activated at launch</li>
+          <li>No credit card or payment information is required to redeem the offer</li>
+          <li>After the 60-day period, your account will revert to the Starter tier unless you choose to subscribe to Premium</li>
+          <li>DrawMe reserves the right to modify or withdraw this offer at any time before launch, with reasonable notice to affected waitlist members</li>
+          <li>This offer has no cash value and cannot be transferred, exchanged, or combined with other offers</li>
+        </ul>
+      </div>
+
+      <!-- 8 -->
+      <div class="doc-section" id="t8">
+        <h2><span class="sec-num">8</span> Acceptable Use</h2>
+        <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You must not:</p>
+        <ul>
+          <li>Use the Service to violate any applicable New Zealand or international law or regulation</li>
+          <li>Attempt to reverse engineer, decompile, or disassemble any part of the DrawMe application</li>
+          <li>Attempt to gain unauthorised access to our systems, databases, or other users' accounts</li>
+          <li>Use automated tools, bots, or scripts to scrape data or generate excessive numbers of predictions</li>
+          <li>Misrepresent the predictive capability of DrawMe to others in a way that could cause harm</li>
+          <li>Use the Service in any manner that could damage, disable, overburden, or impair our infrastructure</li>
+          <li>Reproduce, duplicate, or sell any part of the Service without express written permission from DrawMe</li>
+        </ul>
+      </div>
+
+      <!-- 9 -->
+      <div class="doc-section" id="t9">
+        <h2><span class="sec-num">9</span> Intellectual Property</h2>
+        <p>All content, features, and functionality of the DrawMe Service — including but not limited to the application code, design, graphics, text, algorithms, and data compilations — are owned by DrawMe and are protected by New Zealand and international intellectual property laws.</p>
+        <p>You are granted a limited, non-exclusive, non-transferable, revocable licence to use the Service for your personal, non-commercial use in accordance with these Terms. You retain ownership of any data you personally input into the Service (such as favourite names or notes), but grant us a limited licence to store and process that data to provide the Service.</p>
+        <p>Historical NZ Lotto draw result data is used for analytical purposes. DrawMe claims no intellectual property rights over the underlying draw result data itself.</p>
+      </div>
+
+      <!-- 10 -->
+      <div class="doc-section" id="t10">
+        <h2><span class="sec-num">10</span> Disclaimer of Warranties</h2>
+        <p>The Service is provided on an "as is" and "as available" basis without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+        <p>We do not warrant that:</p>
+        <ul>
+          <li>The Service will be uninterrupted, error-free, or secure at all times</li>
+          <li>Any information provided through the Service is accurate, complete, or current</li>
+          <li>The Service will meet your specific requirements or expectations</li>
+          <li>Any defects in the Service will be corrected within any particular timeframe</li>
+        </ul>
+        <p>Nothing in these Terms excludes any consumer guarantees you may have under the New Zealand Consumer Guarantees Act 1993 or the Fair Trading Act 1986 that cannot lawfully be excluded.</p>
+      </div>
+
+      <!-- 11 -->
+      <div class="doc-section" id="t11">
+        <h2><span class="sec-num">11</span> Limitation of Liability</h2>
+        <p>To the maximum extent permitted by New Zealand law, DrawMe and its officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+        <ul>
+          <li>Loss of profits, revenue, data, or goodwill</li>
+          <li>Any financial losses from lottery participation based on numbers generated by our Service</li>
+          <li>Service interruptions or data loss</li>
+          <li>Any damages arising from unauthorised access to your account</li>
+        </ul>
+        <p>Our total cumulative liability to you for any claims arising under these Terms shall not exceed the total amount you have paid to DrawMe in the twelve months preceding the claim, or $10 NZD, whichever is greater.</p>
+        <p>Nothing in these Terms limits our liability for death or personal injury caused by our negligence, fraud, or fraudulent misrepresentation, or any other liability that cannot be excluded under New Zealand law.</p>
+      </div>
+
+      <!-- 12 -->
+      <div class="doc-section" id="t12">
+        <h2><span class="sec-num">12</span> Termination</h2>
+        <h3>Termination by You</h3>
+        <p>You may terminate your account at any time by contacting us at <a href="mailto:hello@drawme.app">hello@drawme.app</a> or through the account deletion option in the app's settings. Upon termination, your right to use the Service ceases immediately.</p>
+        <h3>Termination by Us</h3>
+        <p>We reserve the right to suspend or terminate your account immediately, without notice or liability, if we determine that you have breached these Terms, engaged in fraudulent activity, or if we reasonably believe your use of the Service poses a risk to other users or our infrastructure.</p>
+        <h3>Effect of Termination</h3>
+        <p>Upon termination, all provisions of these Terms that by their nature should survive will survive, including ownership provisions, warranty disclaimers, and limitations of liability. We will delete or anonymise your personal data in accordance with our Privacy Policy.</p>
+      </div>
+
+      <!-- 13 -->
+      <div class="doc-section" id="t13">
+        <h2><span class="sec-num">13</span> Governing Law</h2>
+        <p>These Terms are governed by and construed in accordance with the laws of New Zealand. You agree to submit to the exclusive jurisdiction of the New Zealand courts for the resolution of any disputes arising under or in connection with these Terms.</p>
+        <p>If any provision of these Terms is found to be unenforceable or invalid under applicable law, that provision will be limited or eliminated to the minimum extent necessary, and the remaining provisions will continue in full force and effect.</p>
+      </div>
+
+      <!-- 14 -->
+      <div class="doc-section" id="t14">
+        <h2><span class="sec-num">14</span> Changes to Terms</h2>
+        <p>We reserve the right to modify these Terms at any time. When we make material changes, we will notify you by updating the "Last updated" date at the top of this page and, where appropriate, by sending you an email notification or displaying a notice within the app.</p>
+        <p>Your continued use of the Service after any changes to these Terms constitutes your acceptance of the updated Terms. If you do not agree to the updated Terms, you must stop using the Service.</p>
+      </div>
+
+      <!-- 15 -->
+      <div class="doc-section" id="t15">
+        <h2><span class="sec-num">15</span> Contact Us</h2>
+        <p>If you have any questions about these Terms of Service, please contact us:</p>
+        <div class="contact-card">
+          <p><strong style="color:var(--text)">DrawMe</strong></p>
+          <p>Email: <a href="mailto:hello@drawme.app">hello@drawme.app</a></p>
+          <p>Website: <a href="https://www.drawme.app">www.drawme.app</a></p>
+          <p style="margin-top:12px; color:var(--muted); font-size:0.85rem;">We aim to respond to all legal enquiries within 5 working days.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ══════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-ball">D</div>
+        DrawMe
+      </a>
+      <ul class="footer-links">
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html" style="color:var(--text)">Terms of Service</a></li>
+        <li><a href="mailto:hello@drawme.app">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 DrawMe. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
