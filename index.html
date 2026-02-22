@@ -1809,10 +1809,10 @@
   <script>
     // ─── AppWrite Configuration ────────────────────────
     // TODO: Replace these placeholder values with your actual AppWrite credentials
-    const APPWRITE_ENDPOINT   = 'https://YOUR_APPWRITE_ENDPOINT/v1'; // e.g. https://cloud.appwrite.io/v1
-    const APPWRITE_PROJECT_ID = 'YOUR_PROJECT_ID';
-    const APPWRITE_DATABASE_ID   = 'YOUR_DATABASE_ID';
-    const APPWRITE_COLLECTION_ID = 'YOUR_WAITLIST_COLLECTION_ID';    // collection with 'email' & 'createdAt' fields
+    const APPWRITE_ENDPOINT   = 'https://syd.cloud.appwrite.io/v1'; // e.g. https://cloud.appwrite.io/v1
+    const APPWRITE_PROJECT_ID = '68819935002f7e79bd06';
+    const APPWRITE_DATABASE_ID   = '699a8aba00112ff55297';
+    const APPWRITE_COLLECTION_ID = 'waitlist';    // collection with 'email' & 'createdAt' fields
 
     // ─── Submit to AppWrite ────────────────────────────
     async function addToWaitlist(email) {
@@ -1828,7 +1828,6 @@
           documentId: 'unique()',
           data: {
             email: email.toLowerCase().trim(),
-            createdAt: new Date().toISOString(),
           },
           permissions: [],
         }),
