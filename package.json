@@ -1,0 +1,12 @@
+{
+  "name": "drawme-landing",
+  "version": "1.0.0",
+  "description": "DrawMe — NZ Lotto & Powerball number generator landing page",
+  "scripts": {
+    "build": "mkdir -p dist && cp index.html dist/index.html && cp -r assets dist/ 2>/dev/null || true",
+    "dev": "npx serve ."
+  },
+  "keywords": ["lotto", "powerball", "nz", "drawme"],
+  "author": "DrawMe",
+  "license": "UNLICENSED"
+}

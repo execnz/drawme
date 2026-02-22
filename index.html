@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ─── Primary SEO ─────────────────────────────── -->
+  <title>DrawMe — Smarter NZ Lotto & Powerball Number Generator</title>
+  <meta name="description" content="DrawMe analyses 2,500+ NZ Lotto & Powerball draws to generate smarter number combinations using real statistical patterns. First 500 users get 60 days of Premium on us. Join the waitlist." />
+  <meta name="keywords" content="NZ Lotto, Powerball New Zealand, lotto number generator, lotto prediction app, hot cold lotto numbers, NZ lottery app, DrawMe" />
+  <meta name="author" content="DrawMe" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.drawme.app/" />
+
+  <!-- ─── Open Graph (Facebook, LinkedIn) ─────────── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://www.drawme.app/" />
+  <meta property="og:title"       content="DrawMe — Smarter NZ Lotto & Powerball Number Generator" />
+  <meta property="og:description" content="Analyse 2,500+ historical NZ Lotto draws and generate smarter Powerball combinations. First 500 users get 60 days of Premium on us. Join the waitlist today." />
+  <meta property="og:image"       content="https://www.drawme.app/og-image.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name"   content="DrawMe" />
+  <meta property="og:locale"      content="en_NZ" />
+
+  <!-- ─── Twitter / X Card ────────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@drawmeapp" />
+  <meta name="twitter:title"       content="DrawMe — Smarter NZ Lotto & Powerball Number Generator" />
+  <meta name="twitter:description" content="Stat-powered NZ Lotto number generator. First 500 users get 60 days of Premium on us. Join the waitlist." />
+  <meta name="twitter:image"       content="https://www.drawme.app/og-image.png" />
+
+  <!-- ─── Mobile / PWA ────────────────────────────── -->
+  <meta name="theme-color" content="#7C3AED" />
+  <meta name="apple-mobile-web-app-title" content="DrawMe" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- ─── Structured Data (JSON-LD) ───────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DrawMe",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "DrawMe analyses 2,500+ NZ Lotto and Powerball draw results to generate smarter number combinations using frequency analysis, hot/cold trends, pattern recognition, and statistical modelling.",
+    "url": "https://www.drawme.app/",
+    "inLanguage": "en-NZ",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Starter",
+        "price": "0",
+        "priceCurrency": "NZD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Premium",
+        "price": "4.99",
+        "priceCurrency": "NZD",
+        "billingIncrement": "P1M"
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "DrawMe",
+      "url": "https://www.drawme.app/"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0b18;
+      --bg2:       #13101f;
+      --surface:   rgba(255,255,255,0.04);
+      --border:    rgba(255,255,255,0.08);
+      --purple:    #7C3AED;
+      --purple2:   #9D5CF6;
+      --pink:      #EC4899;
+      --orange:    #F97316;
+      --amber:     #FBBF24;
+      --text:      #f0ecff;
+      --muted:     rgba(240,236,255,0.5);
+      --radius:    16px;
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NOISE OVERLAY ────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── LAYOUT ───────────────────────────────────── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    section { padding: 100px 0; }
+
+    /* ─── NAV ──────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 0;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      background: rgba(13,11,24,0.7);
+      transition: background 0.3s;
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.3rem;
+      text-decoration: none;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-ball {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: white;
+      box-shadow: 0 0 16px rgba(124,58,237,0.5);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--orange), var(--amber));
+      color: #1a0a00 !important;
+      padding: 10px 22px;
+      border-radius: 100px;
+      font-weight: 700 !important;
+      font-size: 0.875rem !important;
+      transition: opacity 0.2s, transform 0.2s !important;
+    }
+
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    .nav-hamburger { display: none; cursor: pointer; }
+
+    /* ─── HERO ─────────────────────────────────────── */
+    #hero {
+      padding-top: 160px;
+      padding-bottom: 100px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    /* ambient glow blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      animation: drift 12s ease-in-out infinite alternate;
+    }
+
+    .blob-1 {
+      width: 600px; height: 600px;
+      background: rgba(124,58,237,0.22);
+      top: -200px; left: -100px;
+      animation-delay: 0s;
+    }
+
+    .blob-2 {
+      width: 500px; height: 500px;
+      background: rgba(236,72,153,0.15);
+      top: -100px; right: -100px;
+      animation-delay: -5s;
+    }
+
+    .blob-3 {
+      width: 400px; height: 400px;
+      background: rgba(249,115,22,0.12);
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      animation-delay: -8s;
+    }
+
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(30px, -20px) scale(1.05); }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(124,58,237,0.15);
+      border: 1px solid rgba(124,58,237,0.3);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--purple2);
+      margin-bottom: 28px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-badge span { animation: pulse 2s ease-in-out infinite; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--purple2), var(--pink), var(--orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 48px;
+      font-weight: 300;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    /* ─── FLOATING BALLS DISPLAY ───────────────────── */
+    .balls-display {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .ball {
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: white;
+      position: relative;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .ball.main {
+      background: linear-gradient(145deg, #8B5CF6, #6D28D9);
+      box-shadow: 0 8px 24px rgba(109,40,217,0.5), inset 0 1px 0 rgba(255,255,255,0.25);
+    }
+
+    .ball.powerball {
+      background: linear-gradient(145deg, #F472B6, #EC4899);
+      box-shadow: 0 8px 24px rgba(236,72,153,0.5), inset 0 1px 0 rgba(255,255,255,0.25);
+      width: 54px; height: 54px;
+      font-size: 1rem;
+    }
+
+    .ball::before {
+      content: '';
+      position: absolute;
+      top: 8px; left: 12px;
+      width: 16px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      transform: rotate(-35deg);
+    }
+
+    .ball:nth-child(1) { animation-delay: 0s; }
+    .ball:nth-child(2) { animation-delay: 0.2s; }
+    .ball:nth-child(3) { animation-delay: 0.4s; }
+    .ball:nth-child(4) { animation-delay: 0.6s; }
+    .ball:nth-child(5) { animation-delay: 0.8s; }
+    .ball:nth-child(6) { animation-delay: 1.0s; }
+    .ball:nth-child(7) { animation-delay: 1.2s; }
+    .ball:nth-child(8) { animation-delay: 1.4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .pb-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--pink);
+      text-align: center;
+      margin-top: 4px;
+      display: block;
+    }
+
+    .ball-wrapper { display: flex; flex-direction: column; align-items: center; }
+
+    /* ─── WAITLIST FORM ────────────────────────────── */
+    .waitlist-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 520px;
+      margin: 0 auto;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    .waitlist-box h2 {
+      font-family: var(--font-head);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .waitlist-box p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .form-input {
+      flex: 1;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .form-input::placeholder { color: rgba(240,236,255,0.3); }
+
+    .form-input:focus {
+      border-color: var(--purple);
+      background: rgba(124,58,237,0.08);
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, var(--orange), var(--amber));
+      border: none;
+      border-radius: 12px;
+      padding: 14px 28px;
+      color: #1a0a00;
+      font-family: var(--font-head);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(249,115,22,0.35);
+    }
+
+    .btn-submit:hover {
+      opacity: 0.92;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(249,115,22,0.45);
+    }
+
+    .btn-submit:active { transform: translateY(0); }
+
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* success / error states */
+    .form-message {
+      display: none;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 14px;
+    }
+
+    .form-message.success {
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.25);
+      color: #4ade80;
+    }
+
+    .form-message.error {
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.25);
+      color: #f87171;
+    }
+
+    /* ─── SOCIAL PROOF ─────────────────────────────── */
+    .social-proof {
+      text-align: center;
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      animation: fadeUp 0.6s 0.5s ease both;
+    }
+
+    .avatars {
+      display: flex;
+    }
+
+    .avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+      margin-left: -8px;
+      font-size: 0.7rem;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      color: white;
+    }
+
+    .avatar:first-child { margin-left: 0; }
+    .av1 { background: linear-gradient(135deg, #7C3AED, #EC4899); }
+    .av2 { background: linear-gradient(135deg, #F97316, #FBBF24); }
+    .av3 { background: linear-gradient(135deg, #06b6d4, #7C3AED); }
+    .av4 { background: linear-gradient(135deg, #EC4899, #F97316); }
+
+    /* ─── FEATURES ─────────────────────────────────── */
+    #features { padding: 100px 0; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--purple2);
+      margin-bottom: 16px;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(124,58,237,0.06), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124,58,237,0.3);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .feature-card:hover::before { opacity: 1; }
+
+    .feature-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .icon-purple { background: rgba(124,58,237,0.15); }
+    .icon-pink   { background: rgba(236,72,153,0.15); }
+    .icon-orange { background: rgba(249,115,22,0.15); }
+    .icon-amber  { background: rgba(251,191,36,0.15); }
+    .icon-cyan   { background: rgba(6,182,212,0.15); }
+    .icon-green  { background: rgba(34,197,94,0.15); }
+
+    .feature-card h3 {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    /* ─── HOW IT WORKS ─────────────────────────────── */
+    #how {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      position: relative;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 28px; left: calc(16.67% + 24px); right: calc(16.67% + 24px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--purple), var(--pink), var(--orange));
+    }
+
+    .step { text-align: center; }
+
+    .step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: white;
+      margin: 0 auto 20px;
+      box-shadow: 0 0 24px rgba(124,58,237,0.4);
+      position: relative;
+      z-index: 1;
+    }
+
+    .step h3 {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.7;
+    }
+
+    /* ─── STATS STRIP ──────────────────────────────── */
+    #stats {
+      padding: 70px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 40px 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      transition: background 0.3s;
+    }
+
+    .stat-item:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .stat-item:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
+    .stat-item:hover { background: rgba(255,255,255,0.06); }
+
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--purple2), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* ─── STRATEGIES ───────────────────────────────── */
+    #strategies { padding: 100px 0; }
+
+    .strategies-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .strategy-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .strategy-card:hover {
+      border-color: rgba(124,58,237,0.3);
+      transform: translateY(-3px);
+    }
+
+    .strategy-emoji {
+      font-size: 2rem;
+      flex-shrink: 0;
+      width: 56px; height: 56px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .strategy-card h3 {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .strategy-card p {
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    /* ─── TIERS ────────────────────────────────────── */
+    #pricing { padding: 100px 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .tiers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .tier-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+      transition: transform 0.3s;
+    }
+
+    .tier-card.premium {
+      border-color: rgba(124,58,237,0.4);
+      background: linear-gradient(145deg, rgba(124,58,237,0.1), rgba(236,72,153,0.06));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tier-card.premium::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--purple), var(--pink));
+    }
+
+    .tier-card:hover { transform: translateY(-4px); }
+
+    .tier-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .tier-name {
+      font-family: var(--font-head);
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .tier-price {
+      font-family: var(--font-head);
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
+    }
+
+    .tier-price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .tier-desc {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 28px;
+    }
+
+    .tier-features { list-style: none; }
+
+    .tier-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 0.875rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tier-features li:last-child { border-bottom: none; }
+
+    .tier-features li::before {
+      content: '✓';
+      color: var(--purple2);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .tier-features li.dim {
+      color: var(--muted);
+    }
+
+    .tier-features li.dim::before {
+      content: '–';
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* ─── FINAL CTA ────────────────────────────────── */
+    #cta {
+      padding: 120px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-glow {
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,58,237,0.2) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    #cta h2 {
+      font-family: var(--font-head);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    #cta p {
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+
+    .cta-form {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ─── FOOTER ───────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    /* ─── ANIMATIONS ───────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────── */
+    /* ─── EARLY ACCESS BANNER ──────────────────────── */
+    .offer-banner {
+      background: linear-gradient(135deg, rgba(249,115,22,0.12), rgba(251,191,36,0.08));
+      border: 1px solid rgba(249,115,22,0.3);
+      border-radius: 20px;
+      padding: 28px 36px;
+      margin: 48px auto 0;
+      max-width: 700px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      animation: fadeUp 0.6s 0.45s ease both;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offer-banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--orange), var(--amber));
+    }
+
+    .offer-icon {
+      font-size: 2.4rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .offer-text { flex: 1; text-align: left; }
+
+    .offer-text strong {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--amber);
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .offer-text p {
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .offer-slots {
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .slots-num {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--orange);
+      letter-spacing: -0.04em;
+      display: block;
+      line-height: 1;
+    }
+
+    .slots-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* ─── OFFER CALLOUT in pricing ─────────────────── */
+    .offer-callout {
+      background: linear-gradient(135deg, rgba(249,115,22,0.1), rgba(251,191,36,0.06));
+      border: 1px solid rgba(249,115,22,0.25);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+    }
+
+    .offer-callout span { color: var(--amber); font-weight: 600; }
+    .offer-callout p { color: var(--muted); margin: 0; }
+
+    @media (max-width: 768px) {
+      section { padding: 70px 0; }
+
+      .nav-links { display: none; }
+      .nav-hamburger { display: block; }
+
+      .features-grid,
+      .steps,
+      .strategies-grid,
+      .tiers {
+        grid-template-columns: 1fr;
+      }
+
+      .steps::before { display: none; }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-item:nth-child(2) { border-radius: 0 var(--radius) 0 0; }
+      .stat-item:nth-child(3) { border-radius: 0 0 0 var(--radius); }
+      .stat-item:first-child  { border-radius: var(--radius) 0 0 0; }
+      .stat-item:last-child   { border-radius: 0 0 var(--radius) 0; }
+
+      .form-row { flex-direction: column; }
+
+      .cta-form { flex-direction: column; }
+
+      .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+
+      .balls-display { gap: 8px; }
+      .ball { width: 46px; height: 46px; font-size: 0.9rem; }
+
+      .waitlist-box { padding: 28px 20px; }
+
+      .offer-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+      }
+
+      .offer-text { text-align: center; }
+    }
+    /* ─── SCREENSHOTS SECTION ──────────────────────── */
+    #screenshots { padding: 100px 0; }
+
+    .screenshot-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+
+    .screenshot-row:last-child { margin-bottom: 0; }
+
+    /* Odd rows: image left, text right */
+    .screenshot-row.img-left  .screenshot-phone { order: 0; }
+    .screenshot-row.img-left  .screenshot-copy  { order: 1; }
+
+    /* Even rows: text left, image right */
+    .screenshot-row.img-right .screenshot-phone { order: 1; }
+    .screenshot-row.img-right .screenshot-copy  { order: 0; }
+
+    .screenshot-phone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Phone frame wrapper */
+    .phone-frame {
+      position: relative;
+      width: 260px;
+      filter: drop-shadow(0 32px 64px rgba(0,0,0,0.5));
+      transition: transform 0.4s ease;
+    }
+
+    .phone-frame:hover { transform: translateY(-8px) rotate(1deg); }
+
+    /* Outer shell */
+    .phone-shell {
+      background: #1a1628;
+      border-radius: 42px;
+      border: 2px solid rgba(255,255,255,0.1);
+      padding: 14px;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.05),
+        inset 0 0 0 1px rgba(0,0,0,0.5),
+        0 40px 80px rgba(0,0,0,0.6);
+      position: relative;
+    }
+
+    /* Notch */
+    .phone-shell::before {
+      content: '';
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px; height: 20px;
+      background: #1a1628;
+      border-radius: 0 0 14px 14px;
+      z-index: 2;
+      border: 2px solid rgba(255,255,255,0.08);
+      border-top: none;
+    }
+
+    /* Side buttons */
+    .phone-shell::after {
+      content: '';
+      position: absolute;
+      right: -4px; top: 80px;
+      width: 3px; height: 60px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 0 3px 3px 0;
+    }
+
+    /* Screen area */
+    .phone-screen {
+      background: #0d0b18;
+      border-radius: 30px;
+      overflow: hidden;
+      aspect-ratio: 9/19.5;
+      position: relative;
+    }
+
+    /* The actual screenshot image */
+    .phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    /* Placeholder shown when no image is present */
+    .phone-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(160deg, #1a1430 0%, #0d0b18 100%);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .phone-placeholder .ph-icon {
+      font-size: 2.4rem;
+      opacity: 0.6;
+    }
+
+    .phone-placeholder .ph-label {
+      font-family: var(--font-head);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .phone-placeholder .ph-hint {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.15);
+      font-style: italic;
+    }
+
+    /* Decorative glow ring behind phone */
+    .phone-glow {
+      position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .glow-purple { background: rgba(124,58,237,0.25); }
+    .glow-pink   { background: rgba(236,72,153,0.2); }
+    .glow-orange { background: rgba(249,115,22,0.2); }
+    .glow-amber  { background: rgba(251,191,36,0.18); }
+
+    /* Copy block */
+    .screenshot-copy { padding: 0 8px; }
+
+    .screenshot-copy .sc-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--purple2);
+      margin-bottom: 14px;
+    }
+
+    .screenshot-copy h3 {
+      font-family: var(--font-head);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .screenshot-copy p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .sc-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sc-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .sc-bullets li .bullet-dot {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem;
+    }
+
+    @media (max-width: 768px) {
+      #screenshots .screenshot-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 70px;
+      }
+
+      .screenshot-row.img-right .screenshot-phone,
+      .screenshot-row.img-left  .screenshot-phone { order: 0; }
+      .screenshot-row.img-right .screenshot-copy,
+      .screenshot-row.img-left  .screenshot-copy  { order: 1; }
+
+      .phone-frame { width: 220px; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ NAV ═══════════════════════════════════════ -->
+  <nav>
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <div class="logo-ball">D</div>
+        DrawMe
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#waitlist" class="nav-cta">Join Waitlist ✨</a></li>
+      </ul>
+      <div class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ══════════════════════════════════════ -->
+  <section id="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="container">
+
+      <div class="hero-badge">
+        <span>●</span> Coming Soon — First 500 Users Get 60 Days of Premium On Us
+      </div>
+
+      <h1>
+        Your Lucky Numbers,<br>
+        <span class="gradient-text">Smarter.</span>
+      </h1>
+
+      <p class="hero-sub">
+        DrawMe analyses every NZ Lotto & Powerball draw in history to generate smarter number combinations — powered by real statistical patterns, not random chance.
+      </p>
+
+      <!-- Animated balls -->
+      <div class="balls-display">
+        <div class="ball-wrapper">
+          <div class="ball main">4</div>
+        </div>
+        <div class="ball-wrapper">
+          <div class="ball main">17</div>
+        </div>
+        <div class="ball-wrapper">
+          <div class="ball main">22</div>
+        </div>
+        <div class="ball-wrapper">
+          <div class="ball main">29</div>
+        </div>
+        <div class="ball-wrapper">
+          <div class="ball main">33</div>
+        </div>
+        <div class="ball-wrapper">
+          <div class="ball main">38</div>
+        </div>
+        <div class="ball-wrapper">
+          <div class="ball main">11</div>
+        </div>
+        <div class="ball-wrapper">
+          <div class="ball powerball">7</div>
+          <span class="pb-label">PB</span>
+        </div>
+      </div>
+
+      <!-- Waitlist Form -->
+      <div class="waitlist-box" id="waitlist">
+        <h2>Claim Your 60 Days On Us 🎁</h2>
+        <p>Join the waitlist now. The first 500 users get Premium on us for 60 days at launch — no credit card needed.</p>
+        <form id="waitlistForm" onsubmit="submitWaitlist(event)">
+          <div class="form-row">
+            <input
+              type="email"
+              id="emailInput"
+              class="form-input"
+              placeholder="your@email.com"
+              required
+              autocomplete="email"
+            />
+            <button type="submit" class="btn-submit" id="submitBtn">
+              Join Waitlist ✨
+            </button>
+          </div>
+          <p class="form-note">🔒 No spam, ever. Unsubscribe any time.</p>
+          <div class="form-message" id="formMessage"></div>
+        </form>
+      </div>
+
+      <!-- Social proof -->
+      <div class="social-proof">
+        <div class="avatars">
+          <div class="avatar av1">J</div>
+          <div class="avatar av2">M</div>
+          <div class="avatar av3">S</div>
+          <div class="avatar av4">K</div>
+        </div>
+        <span>Join <strong>hundreds</strong> of NZ Lotto players already on the list</span>
+      </div>
+
+      <!-- Early Access Offer Banner -->
+      <div class="offer-banner" role="complementary" aria-label="Early access offer">
+        <div class="offer-icon">🎁</div>
+        <div class="offer-text">
+          <strong>Early Bird Offer — First 500 Waitlisters Only</strong>
+          <p>Join the waitlist now and unlock <strong style="color:var(--text)">60 days of Premium on us</strong> when DrawMe launches — no credit card required. After that, it's just $4.99/month.</p>
+        </div>
+        <div class="offer-slots">
+          <span class="slots-num" id="slotsLeft">500</span>
+          <span class="slots-label">spots left</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ STATS ══════════════════════════════════════ -->
+  <div id="stats">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <div class="stat-item">
+          <span class="stat-num">2,500+</span>
+          <span class="stat-label">Historical Draws Analysed</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">5</span>
+          <span class="stat-label">Prediction Strategies</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">40</span>
+          <span class="stat-label">Main Numbers Tracked</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Stats-Powered, Not Random</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ FEATURES ═══════════════════════════════════ -->
+  <section id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Features</span>
+        <h2>Built for Serious<br><span class="gradient-text">Lotto Players</span></h2>
+        <p>Everything you need to play smarter — from frequency analysis to full draw history at your fingertips.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon icon-purple">🔥</div>
+          <h3>Hot & Cold Numbers</h3>
+          <p>Track which numbers are trending hot or running cold across recent draws. See what the data says before you pick.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon icon-pink">📊</div>
+          <h3>Frequency Analysis</h3>
+          <p>Every number from 1–40 and every Powerball from 1–10 ranked by historical appearance rate across all NZ draws.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon icon-orange">🎯</div>
+          <h3>Confidence Scoring</h3>
+          <p>Each generated combination gets a confidence score built from frequency, patterns, trends, and statistical modelling.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon icon-amber">⚙️</div>
+          <h3>Wheeling System</h3>
+          <p>Cover more combinations with guaranteed minimum matches using full, abbreviated, and key number wheel systems.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon icon-cyan">📅</div>
+          <h3>Full Draw History</h3>
+          <p>Browse every past NZ Lotto draw with full stats — odd/even splits, range distribution, division 1 winners, and prize pools.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon icon-green">❤️</div>
+          <h3>Save Favourites</h3>
+          <p>Save your best combinations, rate them, add notes, and track how your favourite lines perform against real draws over time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ════════════════════════════════ -->
+  <section id="how">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">How It Works</span>
+        <h2>Three Steps to <span class="gradient-text">Smarter Numbers</span></h2>
+        <p>DrawMe's ensemble engine combines five statistical methods to give you the best possible combinations.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <h3>Choose Your Strategy</h3>
+          <p>Pick from Balanced, Hot Numbers, Cold Numbers, or Random — or let DrawMe intelligently blend all methods for you.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">2</div>
+          <h3>Generate Lines</h3>
+          <p>DrawMe analyses 2,500+ historical draws and instantly generates 1–20 stat-backed number lines, each with a confidence score.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">3</div>
+          <h3>Save & Track</h3>
+          <p>Save your favourites, view draw history, and watch how your lines compare against real Powerball results every week.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STRATEGIES ══════════════════════════════════ -->
+  <section id="strategies">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Prediction Strategies</span>
+        <h2>Play Your <span class="gradient-text">Way</span></h2>
+      </div>
+
+      <div class="strategies-grid">
+        <div class="strategy-card reveal">
+          <div class="strategy-emoji">⚖️</div>
+          <div>
+            <h3>Balanced</h3>
+            <p>The smart default. DrawMe blends hot, cold, and neutral numbers for a well-rounded combination with broad statistical coverage.</p>
+          </div>
+        </div>
+        <div class="strategy-card reveal">
+          <div class="strategy-emoji">🔥</div>
+          <div>
+            <h3>Hot Numbers</h3>
+            <p>Ride the streak. Prioritises numbers that have appeared most frequently in recent draws — for when momentum matters.</p>
+          </div>
+        </div>
+        <div class="strategy-card reveal">
+          <div class="strategy-emoji">❄️</div>
+          <div>
+            <h3>Cold Numbers</h3>
+            <p>Due for a comeback. Targets overdue numbers that haven't appeared in a while — statistically primed to reappear.</p>
+          </div>
+        </div>
+        <div class="strategy-card reveal">
+          <div class="strategy-emoji">🎲</div>
+          <div>
+            <h3>Random</h3>
+            <p>Pure chance, beautifully presented. Fully randomised picks for when you just want the thrill without the analysis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SCREENSHOTS ════════════════════════════════ -->
+  <section id="screenshots">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-tag">App Preview</span>
+        <h2>See DrawMe <span class="gradient-text">In Action</span></h2>
+        <p>A beautifully designed experience built for NZ Lotto players who want to play smarter.</p>
+      </div>
+
+      <!-- ROW 1 — Home / Dashboard — image left -->
+      <div class="screenshot-row img-left">
+        <div class="screenshot-phone reveal">
+          <div style="position:relative;">
+            <div class="phone-glow glow-purple" style="top:-60px;left:-60px;"></div>
+            <div class="phone-frame">
+              <div class="phone-shell">
+                <div class="phone-screen">
+                  <!-- REPLACE src with your Home screen screenshot path e.g. src="screenshots/home.png" -->
+                  <img
+                    src=""
+                    alt="DrawMe Home screen showing latest NZ Lotto draw results and generate button"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  />
+                  <div class="phone-placeholder">
+                    <div class="ph-icon">🏠</div>
+                    <div class="ph-label">Home / Dashboard</div>
+                    <div class="ph-hint">Replace src="" with your screenshot path</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screenshot-copy reveal">
+          <span class="sc-tag">Dashboard</span>
+          <h3>Your Numbers,<br><span class="gradient-text">Always Fresh</span></h3>
+          <p>The moment you open DrawMe, you're greeted with the latest NZ Lotto draw — every number, every stat, right at the top.</p>
+          <ul class="sc-bullets">
+            <li><div class="bullet-dot">✓</div> Latest draw results with Powerball displayed instantly</li>
+            <li><div class="bullet-dot">✓</div> One-tap access to generate your next set of numbers</li>
+            <li><div class="bullet-dot">✓</div> Personalised greeting and quick stats overview</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ROW 2 — Generate Numbers — image right -->
+      <div class="screenshot-row img-right">
+        <div class="screenshot-copy reveal">
+          <span class="sc-tag">Generate</span>
+          <h3>Pick Your Strategy,<br><span class="gradient-text">Generate Instantly</span></h3>
+          <p>Choose how many lines you want, select your preferred prediction strategy, and DrawMe does the rest — delivering stat-backed combinations in seconds.</p>
+          <ul class="sc-bullets">
+            <li><div class="bullet-dot">✓</div> Choose 1–20 lines per generation</li>
+            <li><div class="bullet-dot">✓</div> Balanced, Hot, Cold, and Random strategies</li>
+            <li><div class="bullet-dot">✓</div> Confidence score shown for every line generated</li>
+          </ul>
+        </div>
+        <div class="screenshot-phone reveal">
+          <div style="position:relative;">
+            <div class="phone-glow glow-pink" style="top:-40px;right:-40px;"></div>
+            <div class="phone-frame">
+              <div class="phone-shell">
+                <div class="phone-screen">
+                  <!-- REPLACE src with your Generate screen screenshot path e.g. src="screenshots/generate.png" -->
+                  <img
+                    src=""
+                    alt="DrawMe Generate screen showing strategy selector and generated number lines with confidence scores"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  />
+                  <div class="phone-placeholder">
+                    <div class="ph-icon">✨</div>
+                    <div class="ph-label">Generate Numbers</div>
+                    <div class="ph-hint">Replace src="" with your screenshot path</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 3 — Draw History — image left -->
+      <div class="screenshot-row img-left">
+        <div class="screenshot-phone reveal">
+          <div style="position:relative;">
+            <div class="phone-glow glow-orange" style="bottom:-40px;left:-40px;"></div>
+            <div class="phone-frame">
+              <div class="phone-shell">
+                <div class="phone-screen">
+                  <!-- REPLACE src with your History screen screenshot path e.g. src="screenshots/history.png" -->
+                  <img
+                    src=""
+                    alt="DrawMe Draw History screen showing past NZ Lotto results with stats breakdown"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  />
+                  <div class="phone-placeholder">
+                    <div class="ph-icon">📅</div>
+                    <div class="ph-label">Draw History</div>
+                    <div class="ph-hint">Replace src="" with your screenshot path</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screenshot-copy reveal">
+          <span class="sc-tag">History</span>
+          <h3>Every Draw,<br><span class="gradient-text">Fully Detailed</span></h3>
+          <p>Browse all past NZ Lotto draws with deep statistical breakdowns. Filter by year, search by draw number, and dive into range distributions, odd/even splits, and division winners.</p>
+          <ul class="sc-bullets">
+            <li><div class="bullet-dot">✓</div> 100+ past draws with full stats breakdowns</li>
+            <li><div class="bullet-dot">✓</div> Filter by 2024, 2025, 2026 or view all at once</li>
+            <li><div class="bullet-dot">✓</div> Division 1 winner count and prize pool per draw</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ROW 4 — Profile / Premium — image right -->
+      <div class="screenshot-row img-right">
+        <div class="screenshot-copy reveal">
+          <span class="sc-tag">Profile</span>
+          <h3>Your Account,<br><span class="gradient-text">Your Stats</span></h3>
+          <p>Track your activity, manage your saved favourites, and control your subscription — all from one clean profile screen.</p>
+          <ul class="sc-bullets">
+            <li><div class="bullet-dot">✓</div> Predictions count, favourites, and days active</li>
+            <li><div class="bullet-dot">✓</div> Premium badge and subscription management</li>
+            <li><div class="bullet-dot">✓</div> Notification preferences and account settings</li>
+          </ul>
+        </div>
+        <div class="screenshot-phone reveal">
+          <div style="position:relative;">
+            <div class="phone-glow glow-amber" style="top:-40px;right:-60px;"></div>
+            <div class="phone-frame">
+              <div class="phone-shell">
+                <div class="phone-screen">
+                  <!-- REPLACE src with your Profile screen screenshot path e.g. src="screenshots/profile.png" -->
+                  <img
+                    src=""
+                    alt="DrawMe Profile screen showing user stats, favourites and premium subscription status"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  />
+                  <div class="phone-placeholder">
+                    <div class="ph-icon">👤</div>
+                    <div class="ph-label">Profile / Premium</div>
+                    <div class="ph-hint">Replace src="" with your screenshot path</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ PRICING ══════════════════════════════════════ -->
+  <section id="pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Pricing</span>
+        <h2>Start Simple, <span class="gradient-text">Go Premium</span></h2>
+        <p>DrawMe is yours to try at no cost. Unlock everything with Premium for less than a Lotto ticket a month.</p>
+      </div>
+
+      <div class="tiers">
+        <div class="tier-card reveal">
+          <div class="tier-name">Starter</div>
+          <div class="tier-price">$0 <span>/ month</span></div>
+          <div class="tier-desc">Everything you need to get going.</div>
+          <ul class="tier-features">
+            <li>5 predictions per day</li>
+            <li>Basic statistics view</li>
+            <li>3 saved favourites</li>
+            <li>Last 50 draws history</li>
+            <li class="dim">Advanced analytics</li>
+            <li class="dim">Unlimited predictions</li>
+            <li class="dim">Smart insights</li>
+            <li class="dim">Track favourites vs draws</li>
+          </ul>
+        </div>
+
+        <div class="tier-card premium reveal">
+          <div class="tier-badge">⭐ Premium</div>
+          <div class="tier-name">Premium</div>
+          <div class="tier-price">$4.99 <span>/ month</span></div>
+          <div class="tier-desc">Or $39.99/year — save 33%.</div>
+          <ul class="tier-features">
+            <li>Unlimited predictions</li>
+            <li>Advanced statistics & insights</li>
+            <li>Unlimited saved favourites</li>
+            <li>Full draw history access</li>
+            <li>Track favourites vs real draws</li>
+            <li>Smart AI insights</li>
+            <li>Wheeling system access</li>
+            <li>Priority support</li>
+          </ul>
+          <div class="offer-callout">
+            <span>🎁</span>
+            <p><span>First 500 waitlisters</span> get this tier <span>on us for 60 days</span> at launch — no credit card required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FINAL CTA ════════════════════════════════════ -->
+  <section id="cta">
+    <div class="cta-glow"></div>
+    <div class="container">
+      <div class="reveal">
+        <h2>Ready to Play <span class="gradient-text">Smarter?</span></h2>
+        <p>Join the waitlist today. The first 500 users get <strong>60 days of Premium on us</strong> when DrawMe launches — no credit card needed.</p>
+        <div class="cta-form">
+          <input
+            type="email"
+            id="ctaEmailInput"
+            class="form-input"
+            placeholder="your@email.com"
+            style="max-width: 280px;"
+          />
+          <button class="btn-submit" onclick="submitFromCTA()">
+            Get Early Access ✨
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#" class="nav-logo">
+          <div class="logo-ball">D</div>
+          DrawMe
+        </a>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <p class="footer-copy">© 2026 DrawMe. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ SCRIPTS ══════════════════════════════════════ -->
+  <script>
+    // ─── AppWrite Configuration ────────────────────────
+    // TODO: Replace these placeholder values with your actual AppWrite credentials
+    const APPWRITE_ENDPOINT   = 'https://YOUR_APPWRITE_ENDPOINT/v1'; // e.g. https://cloud.appwrite.io/v1
+    const APPWRITE_PROJECT_ID = 'YOUR_PROJECT_ID';
+    const APPWRITE_DATABASE_ID   = 'YOUR_DATABASE_ID';
+    const APPWRITE_COLLECTION_ID = 'YOUR_WAITLIST_COLLECTION_ID';    // collection with 'email' & 'createdAt' fields
+
+    // ─── Submit to AppWrite ────────────────────────────
+    async function addToWaitlist(email) {
+      const url = `${APPWRITE_ENDPOINT}/databases/${APPWRITE_DATABASE_ID}/collections/${APPWRITE_COLLECTION_ID}/documents`;
+
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Appwrite-Project': APPWRITE_PROJECT_ID,
+        },
+        body: JSON.stringify({
+          documentId: 'unique()',
+          data: {
+            email: email.toLowerCase().trim(),
+            createdAt: new Date().toISOString(),
+          },
+          permissions: [],
+        }),
+      });
+
+      if (!response.ok) {
+        const err = await response.json();
+        // Treat duplicate email gracefully
+        if (err.code === 409 || (err.message && err.message.toLowerCase().includes('already'))) {
+          return { duplicate: true };
+        }
+        throw new Error(err.message || 'Submission failed');
+      }
+
+      return await response.json();
+    }
+
+    // ─── Hero Form Handler ─────────────────────────────
+    async function submitWaitlist(event) {
+      event.preventDefault();
+      const email = document.getElementById('emailInput').value;
+      await handleSubmit(email, 'submitBtn', 'formMessage');
+    }
+
+    // ─── CTA Form Handler ──────────────────────────────
+    async function submitFromCTA() {
+      const emailInput = document.getElementById('ctaEmailInput');
+      const email = emailInput.value;
+      if (!email || !email.includes('@')) {
+        emailInput.focus();
+        return;
+      }
+      // Scroll to hero form and populate it, then submit
+      document.getElementById('emailInput').value = email;
+      document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        handleSubmit(email, 'submitBtn', 'formMessage');
+      }, 600);
+    }
+
+    // ─── Shared Handler ────────────────────────────────
+    async function handleSubmit(email, btnId, msgId) {
+      const btn = document.getElementById(btnId);
+      const msg = document.getElementById(msgId);
+
+      if (!email || !email.includes('@')) return;
+
+      btn.disabled = true;
+      btn.textContent = 'Joining...';
+      if (msg) { msg.style.display = 'none'; msg.className = 'form-message'; }
+
+      try {
+        const result = await addToWaitlist(email);
+
+        if (result.duplicate) {
+          showMessage(msg, "success", "🎉 You're already on the list! We'll be in touch before launch.");
+        } else {
+          showMessage(msg, "success", "🎁 You're in! If you're among the first 500, you'll get 60 days of Premium on us at launch.");
+          document.getElementById('waitlistForm').reset();
+          decrementSlots();
+        }
+        btn.textContent = "You're In ✓";
+      } catch (err) {
+        console.error(err);
+        showMessage(msg, "error", "Something went wrong. Please try again shortly.");
+        btn.disabled = false;
+        btn.textContent = 'Join Waitlist ✨';
+      }
+    }
+
+    function showMessage(el, type, text) {
+      if (!el) return;
+      el.textContent = text;
+      el.className = `form-message ${type}`;
+      el.style.display = 'block';
+    }
+
+    // ─── Scroll Reveal ─────────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          // Stagger siblings
+          const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+          siblings.forEach((el, idx) => {
+            if (el === entry.target) {
+              el.style.transitionDelay = `${idx * 80}ms`;
+              el.classList.add('visible');
+            }
+          });
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ─── Mobile Menu ────────────────────────────────────
+    function toggleMenu() {
+      const links = document.querySelector('.nav-links');
+      if (links.style.display === 'flex') {
+        links.style.display = 'none';
+      } else {
+        links.style.display = 'flex';
+        links.style.flexDirection = 'column';
+        links.style.position = 'absolute';
+        links.style.top = '70px';
+        links.style.left = '0';
+        links.style.right = '0';
+        links.style.background = 'rgba(13,11,24,0.98)';
+        links.style.padding = '20px 24px';
+        links.style.borderBottom = '1px solid rgba(255,255,255,0.08)';
+        links.style.gap = '20px';
+        links.style.backdropFilter = 'blur(20px)';
+      }
+    }
+
+    // ─── Slots Counter ──────────────────────────────
+    // Reads from localStorage so the displayed number persists across page loads
+    // for the same browser. Your AppWrite admin can seed the real count server-side.
+    const TOTAL_SLOTS = 500;
+
+    function getSlotsLeft() {
+      const stored = localStorage.getItem('drawme_slots_left');
+      return stored !== null ? parseInt(stored, 10) : TOTAL_SLOTS;
+    }
+
+    function decrementSlots() {
+      const current = getSlotsLeft();
+      if (current > 0) {
+        const next = current - 1;
+        localStorage.setItem('drawme_slots_left', next);
+        updateSlotsDisplay(next);
+      }
+    }
+
+    function updateSlotsDisplay(n) {
+      const el = document.getElementById('slotsLeft');
+      if (el) el.textContent = Math.max(0, n);
+    }
+
+    // Initialise display on load
+    updateSlotsDisplay(getSlotsLeft());
+
+    // ─── Randomise balls on load ────────────────────────
+    function randomiseBalls() {
+      const mainBalls = document.querySelectorAll('.ball.main');
+      const used = new Set();
+      mainBalls.forEach(ball => {
+        let n;
+        do { n = Math.floor(Math.random() * 40) + 1; } while (used.has(n));
+        used.add(n);
+        ball.textContent = n;
+      });
+      const pb = document.querySelector('.ball.powerball');
+      if (pb) pb.textContent = Math.floor(Math.random() * 10) + 1;
+    }
+
+    randomiseBalls();
+    // Re-randomise every 4 seconds for a live feel
+    setInterval(randomiseBalls, 4000);
+  </script>
+
+</body>
+</html>
